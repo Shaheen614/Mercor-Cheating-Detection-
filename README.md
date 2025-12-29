@@ -21,6 +21,3 @@ This pipeline trains a cost‑aware ensemble using:
    `pip install numpy pandas scikit-learn lightgbm networkx torch`
 3. Train:  
    `python main.py --mode train --train train.csv --test test.csv --edges edges.csv --out artifacts`
-4. Submit:  
-   `python main.py --mode submit --test test.csv --edges edges.csv --artifacts artifacts --out submission.csv`
-5. Upload `submission.csv` on Kaggle competition page.
