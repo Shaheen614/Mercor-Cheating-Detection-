@@ -1,0 +1,12 @@
+# Ignore data files
+train.csv
+test.csv
+edges.csv
+
+# Ignore outputs
+artifacts/
+submission.csv
+
+# Ignore Python cache
+__pycache__/
+*.pyc
