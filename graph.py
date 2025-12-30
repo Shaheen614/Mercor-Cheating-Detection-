@@ -4,10 +4,9 @@ import networkx as nx
 
 def build_graph(edges_df):
     """
-    Build an undirected graph from the socialgraph.csv file.
-    Adjust column names if needed (check with df.columns).
+    Build an undirected graph from the social_graph.csv file.
+    The file has columns 'user_a' and 'user_b'.
     """
-    # In Mercor dataset, columns are typically 'user_a','user_b'
     return nx.from_pandas_edgelist(edges_df, source="user_a", target="user_b")
 
 def compute_graph_features(G, ids):
