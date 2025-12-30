@@ -169,6 +169,7 @@ def run_submit(test_path, edges_path, artifacts_dir, out_csv):
     print(f"Saved submission: {out_csv}")
 
 
+
 def parse_args():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", required=True, choices=["train", "evaluate", "submit"])
@@ -189,3 +190,21 @@ if __name__ == "__main__":
         run_evaluate(args.artifacts)
     elif args.mode == "submit":
         run_submit(args.test, args.edges, args.artifacts, args.out)
+
+def run_train(train_path, test_path, edges_path, out_dir):
+    print(">>> Starting training...")
+
+    print(">>> Loading data...")
+    train_df = pd.read_csv(train_path)
+    test_df = pd.read_csv(test_path)
+    edges_df = pd.read_csv(edges_path)
+
+    print(">>> Building graph features...")
+    X_train, X_test, feature_cols = _build_feature_frames(train_df, test_df, edges_df)
+
+    print(">>> Training LightGBM models...")
+    # your model training loop here
+
+    print(">>> Saving artifacts to", out_dir)
+    # code that saves X_train, X_test, labels, oof, etc.
+
