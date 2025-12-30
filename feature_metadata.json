@@ -1,0 +1,92 @@
+{
+  "feature_001": {
+    "type": "numeric",
+    "range": "1-5",
+    "missing_%": 11.9
+  },
+  "feature_002": {
+    "type": "numeric",
+    "range": "1-10",
+    "missing_%": 11.7
+  },
+  "feature_003": {
+    "type": "numeric",
+    "range": "1-10",
+    "missing_%": 11.7
+  },
+  "feature_004": {
+    "type": "numeric",
+    "range": "0-10",
+    "missing_%": 0.9
+  },
+  "feature_005": {
+    "type": "numeric",
+    "range": "1-10",
+    "missing_%": 2.1
+  },
+  "feature_006": {
+    "type": "numeric",
+    "range": "0-10",
+    "missing_%": 0.9
+  },
+  "feature_007": {
+    "type": "binary",
+    "range": "0-1",
+    "missing_%": 2.6
+  },
+  "feature_008": {
+    "type": "numeric",
+    "range": "0-10",
+    "missing_%": 2.7
+  },
+  "feature_009": {
+    "type": "numeric",
+    "range": "0-10",
+    "missing_%": 2.7
+  },
+  "feature_010": {
+    "type": "numeric",
+    "range": "0-39128914",
+    "missing_%": 2.7
+  },
+  "feature_011": {
+    "type": "binary",
+    "range": "0-1",
+    "missing_%": 2.6
+  },
+  "feature_012": {
+    "type": "numeric",
+    "range": "0-3",
+    "missing_%": 4.6
+  },
+  "feature_013": {
+    "type": "binary",
+    "range": "0-1",
+    "missing_%": 2.6
+  },
+  "feature_014": {
+    "type": "binary",
+    "range": "0-1",
+    "missing_%": 2.6
+  },
+  "feature_015": {
+    "type": "numeric",
+    "range": "-7-898",
+    "missing_%": 0.0
+  },
+  "feature_016": {
+    "type": "numeric",
+    "range": "0-581",
+    "missing_%": 0.0
+  },
+  "feature_017": {
+    "type": "numeric",
+    "range": "0-24",
+    "missing_%": 10.9
+  },
+  "feature_018": {
+    "type": "numeric",
+    "range": "0-1",
+    "missing_%": 10.9
+  }
+}
