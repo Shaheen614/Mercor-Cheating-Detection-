@@ -175,7 +175,7 @@ def parse_args():
     ap.add_argument("--train", default="train.csv")
     ap.add_argument("--test", default="test.csv")
     # change default here:
-    ap.add_argument("--edges", default="socialgraph.csv")
+    ap.add_argument("--edges", default="social_graph.csv")
     ap.add_argument("--out", default="artifacts")
     ap.add_argument("--artifacts", default="artifacts")
     return ap.parse_args()
