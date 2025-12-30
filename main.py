@@ -208,3 +208,31 @@ def run_train(train_path, test_path, edges_path, out_dir):
     print(">>> Saving artifacts to", out_dir)
     # code that saves X_train, X_test, labels, oof, etc.
 
+print(">>> Stage 1: Building graph")
+G = build_graph(edges_df)
+
+print(">>> Stage 2: Computing graph features")
+stats = compute_graph_features(G, ids)
+
+print(">>> Stage 3: Merging features")
+# merge code here
+
+print(">>> Stage 4: Starting LightGBM training")
+for fold, (train_idx, val_idx) in enumerate(kf.split(X_train)):
+    print(f">>> Training fold {fold}")
+    model = lgb.train(params, lgb.Dataset(X_train.iloc[train_idx], y_train.iloc[train_idx]),
+                      valid_sets=[lgb.Dataset(X_train.iloc[val_idx], y_train.iloc[val_idx])],
+                      num_boost_round=1000,
+                      early_stopping_rounds=50)
+    model.save_model(f"artifacts/lgbm_{fold}.txt")
+    print(f">>> Finished fold {fold}")
+
+print(">>> Stage 5: Saving artifacts")
+np.save("artifacts/oof.npy", oof_preds)
+np.save("artifacts/y_lab.npy", y_train.values)
+X_train.to_csv("artifacts/X_train.csv", index=False)
+X_test.to_csv("artifacts/X_test.csv", index=False)
+train_labels.to_csv("artifacts/train_labels.csv", index=False)
+
+print(">>> Stage 6: Done training")
+
